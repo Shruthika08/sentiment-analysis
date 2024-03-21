@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        h5 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis for Flipkart Products</h1>
+        <form action="/" method="post">
+            <input type="text" name="review" placeholder="Enter your review here"> 
+            <br>
+            <input type="submit" value="Predict">
+        </form>
+        <h5>Prediction:
+            {% if prediction == "Positive Review" %}
+                <span style="color: green;">Positive Review</span>
+            {% elif prediction == "Negative Review" %}
+                <span style="color: red;">Negative Review</span>
+            {% else %}
+                <span style="color: gray;">No Prediction Yet</span>
+            {% endif %}
+        </h5>
+    </div>
+</body>
+</html>
